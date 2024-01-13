@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-size: 1.3em;
+  color:#ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  margin:auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

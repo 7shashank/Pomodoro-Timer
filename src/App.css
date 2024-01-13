@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
+  transition: background-color 0.5s ease; /* Add transition for smooth color changes */
+  padding-top: 120;
+}
+
+.container {
+  margin: 0 700;
+  border-radius: 6px;
+  padding: 20px 0px 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pomodoro {
+  background-color: #ba4949; /* Change background color for "pomodoro" state */
+}
+
+.break {
+  background-color: #38858a; /* Change background color for "break" state */
+}
+
+.timer {
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-size: 120px;
+  font-weight: bold;
+  color: #ffffff;
+  /* background: linear-gradient(to top, #F0F2F0, 
+  #000C40);
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;
+  -webkit-background-clip: text;  */
+  margin: 0 0 20 0;
+}
+
+.controls button {
+  padding: 12px 25px;
+  margin: 4px;
+  margin-bottom: 20px;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: #ffffff;
+  border: medium;
+  border-radius: 4px;
+  box-shadow: 0 6px #ebebeb;
+}
+
+.controls button:active {
+  background-color: #fffaf0;
+  box-shadow: 0 0px;
+  transform: translateY(4px);
+}
+
+.pomodoro button{
+  color: #ba4949;
+}
+
+.break button{
+  color: #38858a;
+}
