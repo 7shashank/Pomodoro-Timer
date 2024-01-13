@@ -2,7 +2,7 @@
 
 Basic Pomodoro Timer: A Pomodoro Timer is a well known study technique to help with productivity.
 
-Explanation: A pomodoro (which is just a timer) lasts for 25 mins where you have to focus on your task at hand (no distractions). This is followed by a 5 min break timer, to indulge in your distractions :wink: or to get ready for the next focs session :muscle:.
+Explanation: A pomodoro (which is just a timer) lasts for 25 mins where you have to focus on your task at hand (no distractions). This is followed by a 5 min break timer, for your distractions :wink: or to get ready for the next focus session :muscle:.
 
 ## Available Scripts
 
