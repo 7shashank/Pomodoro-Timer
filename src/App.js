@@ -11,7 +11,7 @@ function App({audio}) {
   const [timerType, setTimerType] = useState('Pomodoro');
   const [timerTimeout, setTimerTimeout] = useState(false);
 
-  const stopTimer = useCallback(() => {
+  const stopTimeOutAlarm = useCallback(() => {
     // console.log('audio.paused: ',audio.paused);
     // console.log('audio.time: ',audio.currentTime);
     audio.pause();
@@ -24,7 +24,7 @@ function App({audio}) {
   const nextTimer = useCallback(() => {
     let sec, min, timer_type;
     setCounter((prevCounter)=> prevCounter + 1);
-    // console.log('ssshetty: counter b4: ',counter);
+    console.log('ssshetty: counter b4: ',counter);
     if ( counter % 8 === 0 ) {
       // sec = 1.5;
       min = 15;
@@ -41,8 +41,8 @@ function App({audio}) {
     // sec = 0;
     setIsActive(true);
     changeTimerStates(min, sec, true, timer_type);
-    stopTimer();
-  }, [counter, stopTimer]);
+    stopTimeOutAlarm();
+  }, [counter, stopTimeOutAlarm]);
 
   useEffect(() => {
     let interval;
@@ -79,7 +79,7 @@ function App({audio}) {
   }, [audio, isActive, minutes, nextTimer, seconds]);
 
   const toggleTimer = () => {
-    // console.log('ssshetty: counter: ',counter);
+    console.log('ssshetty: counter: ',counter);
     // console.log('ssshetty: audio: ',(audio));
     if (minutes || seconds) {
       setIsActive(!isActive);
@@ -92,7 +92,7 @@ function App({audio}) {
     // setSeconds(0);
     // changeTimerStates(25,0,false,'pomodoro');
     setCounter(1);
-    stopTimer();
+    stopTimeOutAlarm();
     changeTimerStates(25,0,false,'Pomodoro',false);
   };
 
@@ -112,8 +112,8 @@ function App({audio}) {
           <span>{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}</span>
         </div>
         <div className="controls">
-          <button onClick={(!isActive&&timerTimeout)? stopTimer :toggleTimer}>{isActive ? 'PAUSE' : timerTimeout ? 'STOP' : 'START'}</button>
-          <button onClick={nextTimer}>START NEXT</button>
+          {counter!==1 && <button onClick={(!isActive&&timerTimeout)? stopTimeOutAlarm :toggleTimer}>{isActive ? 'PAUSE' : timerTimeout ? 'STOP' : 'START'}</button>}
+          <button onClick={nextTimer}>{counter===1 ? 'START' : 'START NEXT'}</button>
           <button onClick={resetTimer}>RESET</button>
         </div>
       </div>
