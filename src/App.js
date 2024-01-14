@@ -24,7 +24,7 @@ function App({audio}) {
   const nextTimer = useCallback(() => {
     let sec, min, timer_type;
     setCounter((prevCounter)=> prevCounter + 1);
-    console.log('ssshetty: counter b4: ',counter);
+    // console.log('ssshetty: counter b4: ',counter);
     if ( counter % 8 === 0 ) {
       // sec = 1.5;
       min = 15;
@@ -79,7 +79,7 @@ function App({audio}) {
   }, [audio, isActive, minutes, nextTimer, seconds]);
 
   const toggleTimer = () => {
-    console.log('ssshetty: counter: ',counter);
+    // console.log('ssshetty: counter: ',counter);
     // console.log('ssshetty: audio: ',(audio));
     if (minutes || seconds) {
       setIsActive(!isActive);
