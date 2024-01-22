@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import Button from './button.js';
 import './App.css';
 
 function App({audio}) {
@@ -112,9 +113,9 @@ function App({audio}) {
           <span>{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}</span>
         </div>
         <div className="controls">
-          {counter!==1 && <button onClick={(!isActive&&timerTimeout)? stopTimeOutAlarm :toggleTimer}>{isActive ? 'PAUSE' : timerTimeout ? 'STOP' : 'START'}</button>}
-          <button onClick={nextTimer}>{counter===1 ? 'START' : 'START NEXT'}</button>
-          <button onClick={resetTimer}>RESET</button>
+          {counter!==1 && <Button onClickFunc={(!isActive&&timerTimeout)? stopTimeOutAlarm :toggleTimer} buttonText={isActive ? 'PAUSE' : timerTimeout ? 'STOP' : 'START'} />}
+          <Button onClickFunc={nextTimer} buttonText={counter===1 ? 'START' : 'START NEXT'} />
+          <Button onClickFunc={resetTimer} buttonText={'RESET'} />
         </div>
       </div>
     </div>
